@@ -68,7 +68,7 @@ use("blog");
 
 //db.posts.find({title: 'Second Post'}).pretty();
 
-db.posts.insertMany([
+/*db.posts.insertMany([
     {
             title: 'Awsome Post',
             body: 'Body of Awsome Post',
@@ -84,4 +84,5 @@ db.posts.insertMany([
                     coordinates: [-97,74, 30.27]
             }
     }
-]);
+]);*/
+
