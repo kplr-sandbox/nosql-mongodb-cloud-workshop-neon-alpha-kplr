@@ -1,1 +1,69 @@
-show dbs
+use("blog");
+
+/*db.posts.insert({
+        title: 'MongoDB rules',
+        body: 'My First MongoDB document',
+        date: ISODate('2023-03-30T18:30:00Z'),
+        tags: ['mongodb', 'databases'],
+        likes: 2,
+        author: {
+                name: 'Douaâ',
+                surname: 'Hayel'
+        },
+        location: {
+                type: 'Point',
+                coordinates: [-112.45, 37.76]
+        }
+});*/
+
+/*db.posts.insert({
+        likes: 5,
+        title: 'Second Post',
+        author: {
+                name: 'Zineb',
+                surname: 'Zannouti'
+        },
+        body: 'Body of our second post',
+        date: ISODate('2023-03-30T03:00:00Z')
+});*/
+
+//db.posts.find();
+
+//db.posts.find({title: 'Second Post'}).pretty();
+
+// Trouver tous les documents et ensuite les trier par le champ title dans l'ordre ascendant (-1 pour l'ordre descendant):
+//db.posts.find().sort({title: -1}).pretty();
+
+// Trouver tous les posts qui ont plus de deux likes en utilisant $gt (greater than)
+//db.posts.find({likes: {$gt: 2}}).pretty();
+
+// Trouver tous les posts qui ont au moins deux likes en utilisant $gte (greater than or equal)
+//db.posts.find({likes: {$gte: 2}}).pretty()
+
+// Trouver tous les posts qui ont au moins deux likes en utilisant $gte (greater than or equal) et les trier par ordre descendant des nombres de likes :
+//db.posts.find({likes: {$gte: 2}}).pretty().sort({like: -1}).pretty()
+
+// Disons que nous voulons ajouter des tags et location à notre deuxième message. Pour ce faire, nous utilisons la méthode update() en lui passant 2 paramètres. Le premier indique le document à mettre à jour, et fonctionne de la même manière que la méthode find(). Le deuxième paramètre est soit un document complet, si vous voulez changer le document complètement, ou nous pouvons utiliser l'opérateur $set, pour dire à MongoDB que nous voulons mettre à jour ou ajouter des champs spécifiques.
+/*db.posts.update(
+    {title: 'Second Post'},
+    {
+    $set: {
+            tags: ['tag1'],
+            location: {
+                    type: 'Point',
+                    coordinates: [-73.97, 40.77]
+            }
+    }
+    }
+);*/
+
+//db.posts.find({title: 'Second Post'}).pretty();
+
+/*db.posts.update(
+    {title: 'Second Post'},
+    {
+        $unset: {tags: ''}
+    }
+);*/
+
+db.posts.find({title: 'Second Post'}).pretty();
